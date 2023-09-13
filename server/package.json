@@ -1,0 +1,21 @@
+{
+  "name": "server",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "test": "mocha --timeout 10000 --u tdd",
+    "server": "nodemon server.js",
+    "start": "node server.js",
+    "client": "npm start --prefix ../client",
+    "dev": "concurrently \"npm  run server\" \"npm run client\" "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.1"
+  }
+}
