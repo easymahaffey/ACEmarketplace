@@ -1,26 +1,26 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.scss';
+import Landing from './components/landingPage/Landing';
 
 function App() {
   return (
     <>
-      <div className="App">
-        <h1>ACE Marketplace App!</h1>
-      </div>
+
 
       <BrowserRouter>
 
         <Routes>
 
-          <Route>
 
-          </Route>
+          <Route path='/' element={<Landing/>} />
+
+
 
         </Routes>
 
 
       </BrowserRouter>
-   </>
+    </>
   );
 }
 
