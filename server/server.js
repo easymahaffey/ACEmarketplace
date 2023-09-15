@@ -13,8 +13,10 @@ app.use(helmet())
 
 session(app)
 app.use(routes)
+// For photo uploads
+// app.use('/api/attachment', require('./routes/api/attachment'))
 require("../backend/db/dbConnect")
 
-app.listen(PORT, ()=>console.log("Tiny ears listen on....", PORT))
+app.listen(PORT, ()=>console.log(`Backend App listens on port.... ${PORT}`))
 
 module.exports = app;
