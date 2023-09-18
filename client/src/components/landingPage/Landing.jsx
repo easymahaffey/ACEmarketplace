@@ -7,7 +7,12 @@ const Landing = () => {
 
     return(
 
+
+
+
       <div id="landing-area">
+
+        <h1>HOLA TESTING!!!!</h1>
 
         <div id="top-area">
 
