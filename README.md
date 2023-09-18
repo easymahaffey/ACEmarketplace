@@ -76,7 +76,7 @@ The server was kept intentionally clean, the database, routes and express-sessio
 
 ```
 
-Similarly, ***Express-session*** is set to its own module which also sets the ***Passport*** middleware to the server. The ***passport-local*** strategy is brought into the express-session module as a dependency that takes in Passport. The code fpr local strategy comes from the passport documentation. Note the paths are setup for a separate ***backend*** directory.
+Similarly, ***Express-session*** is in its own module which also uses the ***Passport*** middleware in the server. The ***passport-local*** strategy is brought into the express-session module as a dependency which takes in Passport. The code for local strategy comes from the passport documentation. Note the paths are setup for the separate ***backend*** directory.
 
 From connectSession.js
 
@@ -110,7 +110,7 @@ From connectSession.js
 
 ```
 
-Passport is setup with connectSession.js is the same auth directory as connectPassport.js: 
+Passport is setup with connectSession.js in the same auth directory as connectPassport.js: 
 
 ```javascript
 
@@ -150,7 +150,7 @@ Passport is setup with connectSession.js is the same auth directory as connectPa
 ```
 
 The routes used to access the application controller function calls from the Axios API on the frontend are in appRoutes.js.
-The thought process for leaving the delete user in the app route is bacuse it is not part of authorization.
+The thought process for leaving the delete user in the app route is because it is not part of authorization.
 
 ```javascript
 
@@ -200,17 +200,6 @@ This is an excerpt from appFunction.js that shows how to delete items from the u
         })
     }
 }
-
-```
-
-### Testing
-
-Testing was done using ***Mocha chai*** assertion testing (tdd) with ***chai-http***. The testing script was changed in the package.json to run tests with Mocha chai assertions, e.g.,
-
-```json
-    "scripts": {
-    "test": "mocha --timeout 10000 --u tdd",
-    }
 
 ```
 
