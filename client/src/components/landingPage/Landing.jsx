@@ -1,7 +1,10 @@
+import React from "react";
 import './landing.scss'
 
 import aceLogo from '../../resources/logos/ACEMarketplacelogo.png'
 import SearchBar from '../search/SearchBar'
+import LogIn from "../users/LogIn";
+import Register from "../users/Register";
 
 const Landing = () => {
 
@@ -20,6 +23,8 @@ const Landing = () => {
 
           <div id="search-area">
           <SearchBar/>
+          <LogIn/>
+          <Register/>
           </div>
 
         </div>
