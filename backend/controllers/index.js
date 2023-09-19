@@ -10,5 +10,6 @@ module.exports = {
     deleteItem: appFunctions.deleteItem,
     updateItem: appFunctions.editItem,
     getItems: appFunctions.getItems,
+    uploadPhoto: appFunctions.uploadPhoto,
     deleteUser: appFunctions.deleteUser
 }

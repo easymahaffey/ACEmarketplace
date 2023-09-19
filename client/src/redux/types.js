@@ -12,4 +12,5 @@ export const OPEN_MENU = 'OPEN_MENU'
 export const GET_USER = 'GET_USER'
 export const SEND_MESSAGE = 'SEND_MESSAGE'
 export const GET_ITEMS = 'GET_ITEMS'
+export const UPLOAD_PHOTO = 'UPLOAD_PHOTO'
 
