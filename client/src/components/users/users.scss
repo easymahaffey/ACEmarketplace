@@ -3,7 +3,8 @@
 .buttons{
     background-color: $med-green;
     color:$font-green;
-    border-radius: 33px;
+    border-radius: 50%;
+    height:50%;
 }
 
 .modals{
@@ -15,10 +16,18 @@
     width: 50%;
     height: auto;
     overflow: auto;
-    background-image: url(../../resources/logos/ACEMarketplacelogo.png);
+    background-image: url(../../resources/logos/logoDotsOnly.png);
     background-size: contain;
     border: 5px dotted $dark-green;
     padding: 2%;
+}
+
+.close-btn{
+    width: fit-content;
+    padding: 2%;
+    justify-content: right;
+    color: $light-green;
+    background-color: $dark-green;
 }
 
 #registration-form{
