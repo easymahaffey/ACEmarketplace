@@ -30,16 +30,18 @@ const Register = () => {
             firstName: firstName,
             lastName: lastName,
             email: email,
-            password: password1,
+            password1: password1,
             password2: password2,
+            //should I be only sending the password 1 to the backend as just password becuase the schema just shows password?
         }
+
         API.register(newUser)
-        // dispatch((getUser()))
         setEmail('')
         setFirstName('')
         setLastName('')
         setPassword1('')
         setPassword2('')
+        console.log(newUser)
 
     }
 
@@ -68,17 +70,11 @@ const Register = () => {
                         <button className="buttons submit-btn" onClick={handleAddUser}>Submit</button>
 
                     </div>
-
-
-
                 </div>
-
             )}
-
         </>
-
-
     )
+    
 }
 
 export default Register
