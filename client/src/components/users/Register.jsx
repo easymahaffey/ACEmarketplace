@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-import { useSelector, useDispatch } from 'react-redux';
-import { connect } from 'react-redux'
-import { openModal } from '../../redux/actions/authActions'
 import API from '../../utils/API'
 import './users.scss'
 
@@ -15,10 +12,15 @@ const Register = () => {
     const [password2, setPassword2] = useState('')
     const [openModal, setOpenModal] = useState(false)
 
-    const handleRegister = () => {
+    const handleRegister = ()=> {
         setShowRegister(false)
         setOpenModal(true)
 
+    }
+
+    const handleClose = ()=>{
+        setOpenModal(false)
+        setShowRegister(true)
     }
 
     const handleAddUser = (e) => {
@@ -49,7 +51,9 @@ const Register = () => {
 
             {openModal && (
                 <div className="modals">
+                     <div className="close-btn" onClick={handleClose}>X</div>
                     <div id="registration-form">
+                       
                         <label className="labels" htmlFor="firstName">First Name</label>
                         <input className="modal-inputs" onChange={(e) => setFirstName(e.target.value)} id="firstName" name="firstName" value={firstName} type="text" />
                         <label className="labels" htmlFor="lastName" >Last Name</label>
