@@ -28,7 +28,7 @@ const Landing = () => {
           <Register/>
           </div>
           <div>
-            <FileUpload />
+            {/* <FileUpload /> */}
           </div>
 
         </div>

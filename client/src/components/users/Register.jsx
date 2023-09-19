@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { useSelector, useDispatch } from 'react-redux';
-import { connect } from 'react-redux'
+// import { useSelector, useDispatch } from 'react-redux';
+// import { connect } from 'react-redux'
 import { openModal } from '../../redux/actions/authActions'
 import API from '../../utils/API'
 import './users.scss'
