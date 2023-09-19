@@ -2,6 +2,52 @@
 
 .buttons{
     background-color: $med-green;
-   
+    color:$font-green;
     border-radius: 33px;
 }
+
+.modals{
+    
+    position: fixed;
+    z-index: 1;
+    left: 20%;
+    top: 10%;
+    width: 50%;
+    height: auto;
+    overflow: auto;
+    background-image: url(../../resources/logos/ACEMarketplacelogo.png);
+    background-size: contain;
+    border: 5px dotted $dark-green;
+    padding: 2%;
+}
+
+#registration-form{
+    width: 50%;
+    height: auto;
+    margin: auto;
+    background-color: $dark-green;
+    padding: 5%;
+}
+
+.modal-inputs {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    color:$font-green;
+}
+
+.labels{
+    color:$light-green;
+    font-family: $reg-font;
+    font-weight: bold;
+    font-size: 4vh;
+    width: 100%;
+    margin: 1%;
+
+}
+
+.submit-btn{
+    margin: 1% 40%;
+}
+
