@@ -1,7 +1,7 @@
 import axios from 'axios'
 import store from "../redux/store.js"
 import { logout, getUser, sendMessage } from "../redux/actions/authActions"
-import { getItems } from "../redux/actions/appActions"
+import { getItems, uploadPhoto } from "../redux/actions/appActions"
 
 const BASE_URL = process.env.REACT_APP_BASE_URL
 
@@ -40,6 +40,13 @@ const API = {
   editItem: (updatedContact) => {
     axios.post(BASE_URL + "/items/update", updatedContact).then(res => store.dispatch(getItems(res.data)))
   },
+  uploadPhoto: (upload) => {
+    console.log("AXIOS uplaod", upload)
+    axios.post(BASE_URL + "/items/upload-photo", upload)
+    // axios.post(BASE_URL + "/items/upload-photo", upload.single('file'))
+    .then(res => store.dispatch(uploadPhoto(res.data)))
+  },
+  
   bringInItems: (_id) => {
     axios.post(BASE_URL + "/items", { _id }).then(res => store.dispatch(getItems(res.data)))
   }
