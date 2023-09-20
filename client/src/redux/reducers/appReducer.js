@@ -47,6 +47,7 @@ const appReducer = (state = initialState, action) => {
                 hamburger: true
             }
         case UPLOAD_PHOTO:
+            console.log("REDUCER", action.payload)
             return {
                 ...state,
                 photo: action.payload,

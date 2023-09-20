@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-// import axios from 'axios';
+import { useDispatch } from 'react-redux'
 import { uploadPhoto } from '../../redux/actions/appActions';
 import API from '../../utils/API';
 
 function FileUpload() {
   const [file, setFile] = useState(null);
   
+const dispatch = useDispatch()
   const handleChange = (e) => {
     setFile(e.target.files[0]);
   };
@@ -15,20 +16,9 @@ function FileUpload() {
 
     const formData = new FormData();
     formData.append('file', file);
-
-    API.uploadPhoto(formData)
-    
-    // try {
-    //   const res = await axios.post('http://localhost:5000/upload', formData, {
-    //     headers: {
-    //       'Content-Type': 'multipart/form-data'
-    //     }
-    //   });
-      
-    //   console.log('File uploaded:', res.data);
-    // } catch (err) {
-    //   console.error('Error uploading file:', err);
-    // }
+    console.log("Upload FILE ", file)
+    API.uploadPhoto(file)
+    dispatch(uploadPhoto)
   };
 
   return (
@@ -41,16 +31,4 @@ function FileUpload() {
   );
 }
 
-const mapDispatchToProps = (dispatch) =>{
-    return {
-        uploadPhoto: ()=>dispatch(uploadPhoto()),
-    }
-}
-
-const mapStateToProps = (state) =>{
-    return {
-        authState: state.auth
-    }
-}
-
-export default FileUpload;
+export default FileUpload
