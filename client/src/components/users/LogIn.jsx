@@ -44,10 +44,10 @@ const LogIn = () => {
         <>
 
             {showLogIn && (
-                <button className="buttons" onClick={handleLogIn}>Log In</button>
+                <button className="buttons login" onClick={handleLogIn}>Log In</button>
             )}
             {showLogOut && (
-                <button className="buttons" onClick={handleLogOut}>Log Out</button>
+                <button className="buttons logout" onClick={handleLogOut}>Log Out</button>
             )}
 
             {openLogIn&&(

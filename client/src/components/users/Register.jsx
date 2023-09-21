@@ -48,7 +48,7 @@ const Register = () => {
     return (
         <>
             {showRegister && (
-                <button className="buttons" onClick={handleRegister}>Register</button>
+                <button className="buttons register" onClick={handleRegister}>Register</button>
             )}
 
             {openModal && (

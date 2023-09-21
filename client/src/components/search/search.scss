@@ -1,8 +1,15 @@
 @import '../../variables.scss';
 
+#search-area{
+    align-items: center;
+    width: 50%;
+
+
+}
 
 .search-bar{
-    width:75%;
+    width:80%;
+    height: 10%;
     padding:2%;
     border-radius: 33px;
     background-color: $dark-green;
@@ -10,10 +17,14 @@
 }
 
 .search-button{
-    background-color: $dark-green;
+    background-color: whitesmoke;
     padding: 2%;
-    border-radius: 33px;
+    border-radius: 50%;
+    height:16vh;
+    width:7vw;
+    font-size: 3vh;
 }
+
 
 @media screen and (min-width: 600px){
     #search-bar{
