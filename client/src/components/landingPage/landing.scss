@@ -8,9 +8,11 @@
 }
 
 #top-area{
+   
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    justify-content: space-between;
    
 
 }
@@ -28,16 +30,20 @@
 }
 
 #search-area{
-    margin-top:1%;
     width:96%;
     display:flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    padding: 2%;
-    justify-content:flex-start;
     background-color: $light-green;
-    gap:2%;
+    gap:1%;
 }
+
+#logins{
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+    margin-right:2%;
+}
+
 
 @media screen and (min-width: 600px){
     .logo{

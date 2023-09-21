@@ -16,14 +16,14 @@ const Landing = () => {
 
       <div id="landing-area">
 
-        <h1>HOLA TESTING!!!!</h1>
-
         <div id="top-area">
 
           <div id="logo-area"><img className="logo" src={aceLogo} alt="ACE Logo" /></div>
 
-          <div id="search-area">
-          <SearchBar/>
+          
+          <SearchBar/>         
+          
+          <div id="logins">
           <LogIn/>
           <Register/>
           </div>

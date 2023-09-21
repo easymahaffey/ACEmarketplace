@@ -1,10 +1,29 @@
 @import '../../variables.scss';
 
 .buttons{
-    background-color: $med-green;
+    background-color: white;
+    font-size: 3vh;
     color:$font-green;
     border-radius: 50%;
-    height:50%;
+    height:16vh;
+    width:7vw;
+    margin: auto;
+
+}
+
+.login{
+    background-color: $dark-green;
+    color:$light-green;
+}
+
+.logout{
+    background-color: $font-green;
+    color:$light-green;
+
+}
+.register{
+    background-color: $med-green;
+    color:$font-green;
 }
 
 .modals{
