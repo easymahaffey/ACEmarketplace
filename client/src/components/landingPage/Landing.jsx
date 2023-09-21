@@ -32,7 +32,7 @@ const Landing = () => {
           </div>
 
         </div>
-        
+        <Card />
       </div>
     )
 }

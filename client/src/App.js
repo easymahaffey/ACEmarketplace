@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.scss';
 import Landing from './components/landingPage/Landing';
-
+import Admin from "../src/components/admin/admin"
 function App() {
   return (
     <>
@@ -15,7 +15,7 @@ function App() {
           <Route path='/' element={<Landing/>} />
 
 
-
+          <Route path='/admin' element={<Admin/>} />
         </Routes>
 
 
