@@ -5,6 +5,7 @@ import aceLogo from '../../resources/logos/ACEMarketplacelogo.png'
 import SearchBar from '../search/SearchBar'
 import LogIn from "../users/LogIn";
 import Register from "../users/Register";
+import FileUpload from "../picture/Upload";
 
 const Landing = () => {
   const navigate = useNavigate()
@@ -24,9 +25,12 @@ const Landing = () => {
           <Register/>
           <button className="buttons" onClick={()=> navigate('/Admin')}>Admin</button>
           </div>
+          <div>
+            {/* <FileUpload /> */}
+          </div>
 
         </div>
-        
+        <Card />
       </div>
     )
 }

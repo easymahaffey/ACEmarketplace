@@ -1,4 +1,4 @@
-import { CLOSE_ITEM_MODAL, CLOSE_MENU, GET_HAMBURGER, NO_HAMBURGER, OPEN_ITEM_MODAL, OPEN_MENU, GET_ITEMS } from '../types'
+import { CLOSE_ITEM_MODAL, CLOSE_MENU, GET_HAMBURGER, NO_HAMBURGER, OPEN_ITEM_MODAL, OPEN_MENU, GET_ITEMS, UPLOAD_PHOTO } from '../types'
 
 const initialState = {
     addContactModal: false,
@@ -44,6 +44,14 @@ const appReducer = (state = initialState, action) => {
                 ...state,
                 items: action.payload,
                 addItemModal: false,
+                hamburger: true
+            }
+        case UPLOAD_PHOTO:
+            console.log("REDUCER", action.payload)
+            return {
+                ...state,
+                photo: action.payload,
+                addItemModal: true,
                 hamburger: true
             }
         default:
