@@ -30,7 +30,7 @@ const Landing = () => {
           </div>
 
         </div>
-        <Card />
+        {/* <Card /> */}
       </div>
     )
 }

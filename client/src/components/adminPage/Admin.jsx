@@ -9,24 +9,28 @@ const Admin = () => {
     const navigate = useNavigate()
 
     const [itemName, setItemName] = useState('')
+    const [itemDescription, setItemDescription] = useState('')
     const [itemSku, setItemSku] = useState('')
     const [itemCartQuantitiy, setItemCartQuantity] = useState(0)
     const [itemWarehouseQuantity, setItemWarehouseQuantity] = useState(0)
     const [itemCost, setItemCost] = useState(0)
+    const [itemPrice, setItemPrice] = useState(0)
     const [itemPictures, setItemPictures] = useState([])
     const [itemCategory, setItemCategory] = useState('')
 
-    const categories = ['Choose One','Funiture','Home Goods','Clothing & Shoes', 'Jewelry & Accessories', 'Kids Stuff'  ]
+    const categories = ['Choose One','Funiture','Home Goods', 'Bedding','Clothing & Shoes', 'Jewelry & Accessories', 'Kids Stuff'  ]
 
     const handleAddItem = (e) => {
         e.preventDefault()
 
         const newItem = {
             itemName: itemName,
+            itemDescription:itemDescription,
             itemSku: itemSku,
             itemCartQuantitiy:itemCartQuantitiy,
             itemWarehouseQuantity:itemWarehouseQuantity,
             itemCost:itemCost,
+            itemPrice:itemPrice,
             itemCategory:itemCategory,
             itemPictures:itemPictures
 
@@ -35,10 +39,12 @@ const Admin = () => {
         API.addItem(newItem)
 
         setItemName('')
+        itemDescription(0)
         setItemSku('')
         setItemCartQuantity(0)
         setItemWarehouseQuantity(0)
         setItemCost(0)
+        setItemPrice(0)
         setItemPictures([])
         console.log(newItem)
 
@@ -58,6 +64,9 @@ const Admin = () => {
 
                 <label className="labels" htmlFor="itemName">Name</label>
                 <input className="inputs" onChange={(e) => setItemName(e.target.value)} id="itemName" name="itemName" value={itemName} type="text" />
+                
+                <label className="labels" htmlFor="itemDescription">Description</label>
+                <input className="inputs description" onChange={(e) => setItemDescription(e.target.value)} id="itemDescription" name="itemDescription" value={itemDescription} type="text" />
 
                 <label className="labels" htmlFor="itemSku" >Sku</label>
                 <input className="inputs" onChange={(e) => setItemSku(e.target.value)} id="itemSku" value={itemSku} type="text" name="itemSku" />
@@ -70,6 +79,9 @@ const Admin = () => {
 
                 <label className="labels" htmlFor="itemCost">Cost</label>
                 <input className="inputs" onChange={(e) => setItemCost(e.target.value)} id="itemCost" value={itemCost} type="number" name="itemCost" />
+                
+                <label className="labels" htmlFor="itemPrice">Price</label>
+                <input className="inputs" onChange={(e) => setItemPrice(e.target.value)} id="itemPrice" value={itemPrice} type="number" name="itemPrice" />
                 
                 <label className="labels" htmlFor="itemCategory">Category</label>
                 <select className='inputs' onChange={(e) => {
