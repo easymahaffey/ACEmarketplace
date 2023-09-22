@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.scss';
 import Landing from './components/landingPage/Landing';
+import Admin from './components/adminPage/Admin';
 
 function App() {
   return (
@@ -13,9 +14,8 @@ function App() {
 
 
           <Route path='/' element={<Landing/>} />
-
-
-
+          <Route path='/Admin' element={<Admin/>} />
+                        
         </Routes>
 
 
