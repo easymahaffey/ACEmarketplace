@@ -32,10 +32,10 @@ const Register = () => {
             email: email,
             password1: password1,
             password2: password2,
-            //should I be only sending the password 1 to the backend as just password becuase the schema just shows password?
         }
 
         API.register(newUser)
+        
         setEmail('')
         setFirstName('')
         setLastName('')
