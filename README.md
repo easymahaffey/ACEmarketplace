@@ -269,23 +269,26 @@ To start the back-end and the front-end at the same time, the dev dependency ***
 *** **Update/Branch repo build** ***
 
 > `git init` 
+> to intialize git
 
-> `git branch -M dev` main, master or dev
->
-> Connects to the main, master or dev as necessary branch
+> `git fetch https://github.com/easymahaffey/ACEmarketplace.git `
+> to download the latest version of the repo
 
+> `git branch -M dev` 
+> main, master or dev (this step may not be necessary)
 
-> `git checkout -b branch-name` 
-> 
-> Check out the branch you want to work on. 
+***Work on the code before the next step***
 
-** **After you finish your new work push it up by commiting it.** **
+> `git checkout -b *branch name*`
+> Creates new branch to commit to
+ 
+***After you finish your new work push it up by commiting it.***
 
 > `git add .`
 
 > `git commit -m “commit message "`
 
-> `git push origin branch-name`
+> `git push origin *branch name*`
 
 
 ### WHAT WE HAVE LEARNED WITH THIS PROJECT
