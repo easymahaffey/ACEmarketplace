@@ -6,6 +6,8 @@ import SearchBar from '../search/SearchBar'
 import LogIn from "../users/LogIn";
 import Register from "../users/Register";
 import FileUpload from "../picture/Upload";
+import Registration from "../testComponents/Registration";
+import AddItem from "../testComponents/AddItem";
 
 const Landing = () => {
 
@@ -27,12 +29,14 @@ const Landing = () => {
           <LogIn/>
           <Register/>
           </div>
-          <div>
-            {/* <FileUpload /> */}
+          <div className="test-components">
+            <FileUpload />
+            <Registration />
+            <AddItem />
           </div>
 
         </div>
-        <Card />
+        {/* <Card /> */}
       </div>
     )
 }

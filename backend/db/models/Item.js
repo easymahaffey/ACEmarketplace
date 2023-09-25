@@ -23,6 +23,9 @@ const ItemSchema = mongoose.Schema({
     itemName: {
         type: String
     },
+    itemCategory: {
+        type: String
+    },
     itemSku: {
         type: String
     },
@@ -36,6 +39,9 @@ const ItemSchema = mongoose.Schema({
         type: Number
     },
     itemPrice: {
+        type: Number
+    },
+    itemListPrice: {
         type: Number
     },
     itemPictures: [ PictureSchema ]
