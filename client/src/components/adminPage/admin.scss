@@ -1,0 +1,99 @@
+@import '../../variables.scss';
+
+.top-area{
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    background-color: $light-green;
+    margin-bottom: 2%;
+
+}
+.logo-area {
+    height:80%;
+}
+
+.logo {
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    width: auto;
+}
+
+.admin{
+    color:$font-green;
+    text-align: center;
+    align-self: center;
+    font-size: 5vh;
+    font-family: $heading-font;
+}
+
+#admin-form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    background-color: $dark-green;
+    font-family: $reg-font;
+    font-size: 3vh;
+
+}
+
+.headers{
+    text-align: center;
+    color:$light-green;
+    font-size: 6vh;
+}
+
+.inputs{
+    margin:0% 2%;
+    font-size: 3vh;
+    border-radius: 33px;
+    text-indent: 2%;
+}
+
+.description{
+    height:100px;
+}
+
+.submit-btn{
+    border-radius: 50%;
+    padding:2%;
+    font-size: 2vh;
+}
+
+.home{
+    color:$light-green;
+    background-color: $med-green;
+    width: fit-content;
+}
+
+
+@media screen and (min-width: 600px){
+    .top-area{
+        flex-direction: row;
+        gap:25%;
+    }
+    .admin{
+        color:$font-green;
+        text-align: center;
+        align-self: center;
+        font-size: 10vh;
+        font-family: $heading-font;
+    }
+    #admin-form{
+        width: 50%;
+         
+    }
+  
+    .buttons {
+        height: 16vh;
+        width: 8vw;
+    }
+
+
+
+}
+
+
+
