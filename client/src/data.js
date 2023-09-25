@@ -1,4 +1,4 @@
-[{
+const mockData =[{
 
     "itemName": "Ocotillo Cabinet",
     "itemDescription": "bought at Mexidona for $1,000 perfect condition",
@@ -96,3 +96,5 @@
 }
 
 ]
+
+export default mockData
