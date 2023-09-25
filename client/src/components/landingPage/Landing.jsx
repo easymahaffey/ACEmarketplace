@@ -5,7 +5,8 @@ import aceLogo from '../../resources/logos/ACEMarketplacelogo.png'
 import SearchBar from '../search/SearchBar'
 import LogIn from "../users/LogIn";
 import Register from "../users/Register";
-import FileUpload from "../picture/Upload";
+// import FileUpload from "../picture/Upload";
+import Card from "../card/card";
 
 const Landing = () => {
   const navigate = useNavigate()
@@ -30,7 +31,7 @@ const Landing = () => {
           </div>
 
         </div>
-        {/* <Card /> */}
+      <Card />
       </div>
     )
 }
