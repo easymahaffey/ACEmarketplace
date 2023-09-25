@@ -4,6 +4,70 @@ const User = require("../db/models/User");
 module.exports = {
   addItem: function (req, res) {
     let {
+      itemName,
+      itemCategory,
+      itemPicture,
+      itemSku,
+      itemCartQuantity,
+      itemWarehouseQuantity,
+      itemCost,
+      itemListPrice,
+    } = req.body;
+    let item = {};
+    if (itemName !== "") {
+      item.itemName = itemName;
+    }
+    if (itemCategory !== "") {
+      item.itemCategory = itemCategory;
+    }
+    if (itemPicture !== "") {
+      item.itemPicture = itemPicture;
+    }
+    if (itemSku !== "") {
+      item.itemSku = itemSku;
+    }
+    if (itemCartQuantity !== "") {
+      item.itemCartQuantity = itemCartQuantity;
+    }
+    if (itemWarehouseQuantity !== "") {
+      item.itemWarehouseQuantity = itemWarehouseQuantity;
+    }
+    if (itemCost !== "") {
+      item.itemCost = itemCost;
+    }
+    if (itemListPrice !== "") {
+      item.itemListPrice = itemListPrice;
+    }
+    let newItem = new Item(item);
+    Item.findOne({ itemName })
+      .then((data) => {
+        if (!data) {
+          newItem.save()
+          .then(() => {
+            res.status(200).json({
+              message: "Item added",
+              itemName,
+              itemCategory,
+              itemPicture,
+              itemSku,
+              itemCartQuantity,
+              itemWarehouseQuantity,
+              itemCost,
+              itemListPrice
+            });
+          })
+          .catch(saveErr => {
+            console.error("Error saving item:", saveErr);
+            res.status(500).json({ message: "Error saving item" });
+          });
+        } else {
+          res.json({ message: "Item already exists" });
+        }
+      })
+      .catch((err) => console.log(err));
+  },
+  addCartItem: function (req, res) {
+    let {
       userId,
       itemName,
       itemCategory,
@@ -40,11 +104,9 @@ module.exports = {
     if (itemListPrice !== "") {
       item.itemListPrice = itemListPrice;
     }
-    let newItem = new Item(item);
-    newItem.save((err, data) => {
-      if (err) {
-        console.log(err);
-      } else {
+    let newItem = item;
+    newItem.save((err, data))
+    .then((data) => {
         User.findByIdAndUpdate(
           { _id: data.userId },
           { $push: { items: data._id } },
@@ -58,15 +120,21 @@ module.exports = {
               res.json(data.items);
             }
           });
-      }
-    });
+      })
+      .catch((err) => console.log(err));
   },
   deleteItem: function (req, res) {
     let { _id } = req.body;
-    Item.findByIdAndDelete({ _id }, (err, data) => {
-      if (err) {
-        console.log(err);
-      } else {
+    Item.findByIdAndDelete({ _id })
+    .then(() => {
+        res.json({ message: "Item deleted" });
+      })
+      .catch((err) => console.log(err));
+  },
+  deleteCartItem: function (req, res) {
+    let { _id } = req.body;
+    Item.findByIdAndDelete({ _id })
+    .then((data) => {
         User.findByIdAndUpdate(
           { _id: data.userId },
           { $pull: { items: data._id } },
@@ -80,8 +148,8 @@ module.exports = {
               res.json(data.items);
             }
           });
-      }
-    });
+      })
+      .catch((err) => console.log(err));
   },
   editItem: async function (req, res) {
     let {
@@ -170,6 +238,7 @@ module.exports = {
       });
   },
   uploadPhoto: async function (req, res) {
+    console.log("uploadPhoto route hit", req.body);
     let { _id, file } = req.body;
     await Item.findById({ _id });
     const newFile = new File({
