@@ -29,6 +29,9 @@ const ItemSchema = mongoose.Schema({
     itemDescription: {
         type: String
     },
+    itemCategory: {
+        type: String
+    },
     itemSku: {
         type: String
     },

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import API from '../../utils/API'
 import './users.scss'
+import CloseModal from "../reusable/closeModal";
+
 
 const LogIn = () => {
 
@@ -15,6 +17,7 @@ const LogIn = () => {
         setShowLogIn(false)
         setShowLogOut(true)
         setOpenLogIn(true)
+       
     }
 
     const handleLogOut = () => {
@@ -23,21 +26,20 @@ const LogIn = () => {
         setShowLogIn(true)
 
     }
+    const closeLogin = ()=>{
+        setOpenLogIn(false)
+    }
 
-    const handleCheckUser = (e)=>{
+    const handleCheckUser = (e) => {
         e.preventDefault()
-        const checkUser ={
-            email:checkEmail,
-            password:checkPassword
+        const checkUser = {
+            email: checkEmail,
+            password: checkPassword
         }
         API.login(checkUser)
         setCheckEmail('')
         setCheckPassword('')
 
-    }
-
-    const handleClose = ()=>{
-        setOpenLogIn(false)
     }
 
     return (
@@ -50,20 +52,21 @@ const LogIn = () => {
                 <button className="buttons logout" onClick={handleLogOut}>Log Out</button>
             )}
 
-            {openLogIn&&(
+            {openLogIn && (
 
                 <div className="modals">
-                    <div className="close-btn" onClick={handleClose}>X</div>
-      
-                    <div id="registration-form">
-      
+                
+                 
+                <div className="close-btn" onClick={closeLogin}>X</div>
+
+                    <div className="modal-forms">
                         <label className="labels" htmlFor="email">Email</label>
                         <input className="modal-inputs" onChange={(e) => setCheckEmail(e.target.value)} id="userName" value={checkEmail} type="text" name="email" />
                         <label className="labels" htmlFor="password">Password</label>
                         <input className="modal-inputs" onChange={(e) => setCheckPassword(e.target.value)} id="password" value={checkPassword} name="password1" />
-        
+
                         <button className="buttons submit-btn" onClick={handleCheckUser}>Submit</button>
-      
+
                     </div>
                 </div>
 

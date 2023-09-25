@@ -13,34 +13,33 @@ import FileUpload from "../picture/Upload";
 import Registration from "../testComponents/Registration";
 import AddItem from "../testComponents/AddItem";
 
-const Landing = () => {
+const Landing = ({ openModal, setOpenModal }) => {
   const navigate = useNavigate()
 
-    return(
+  return (
 
-      <div id="landing-area">
+    <div id="landing-area">
 
-        <div id="top-area">
+      <div id="top-area">
 
-          <div id="logo-area"><img className="logo" src={aceLogo} alt="ACE Logo" /></div>
+        <div id="logo-area"><img className="logo" src={aceLogo} alt="ACE Logo" /></div>
+        <SearchBar />
+        <div id="logins">
+          <LogIn />
 
-          <SearchBar/>         
-          
-          <div id="logins">
-          <LogIn/>
-          <Register/>
-          <button className="buttons" onClick={()=> navigate('/Admin')}>Admin</button>
-          </div>
-          <div className="test-components">
-            <FileUpload />
-            <Registration />
-            <AddItem />
-          </div>
+          <Register />
 
+          <button className="buttons" onClick={() => navigate('/Admin')}>Admin</button>
         </div>
-      <Card />
+
+        <div>
+          {/* <FileUpload /> */}
+        </div>
+
       </div>
-    )
+      {/* <Card /> */}
+    </div>
+  )
 }
 
 export default Landing
