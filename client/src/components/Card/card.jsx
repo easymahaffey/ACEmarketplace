@@ -1,12 +1,9 @@
 import React, {useState, useEffect} from "react";
 import backPage from "../../resources/logos/backPage.png";
 import furniture from "../../resources/logos/furniture.png";
-
 import './card.scss'
 
 const Card = ({}) => {
-
-
 
     return(
         <>
@@ -28,10 +25,6 @@ const Card = ({}) => {
                 </div>
             </div>
         </div>
-        
-        
-        </div>
-        </>
     )
 }
 

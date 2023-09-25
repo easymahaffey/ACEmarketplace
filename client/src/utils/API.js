@@ -32,7 +32,9 @@ const API = {
     axios.post(BASE_URL + "/auth/logout").then(res => store.dispatch(logout()))
   },
   addItem: (item) => {
-    axios.post(BASE_URL + "/items/add", item).then(res => store.dispatch(getItems(res.data)))
+    axios.post(BASE_URL + "/items/add_item", item)
+    .then(console.log("API ADD ITEM ", item), res => store.dispatch(getItems(res.data)))
+    // .then(res => store.dispatch(getItems(res.data)))
   },
   deleteItem: (_id) => {
     axios.post(BASE_URL + "/items/delete", { _id }).then(res => store.dispatch(getItems(res.data)))
@@ -40,8 +42,12 @@ const API = {
   editItem: (updatedItem) => {
     axios.post(BASE_URL + "/items/update", updatedItem).then(res => store.dispatch(getItems(res.data)))
   },
-  uploadPhoto: (upload) => {
-    axios.post(`${BASE_URL}/items/upload_photo`, upload)
+
+  uploadPhoto: (item) => {
+    // console.log("API UPLOAD PHOTO ", axios.post(`${BASE_URL}/items/upload_photo`, item))
+    axios.post(`${BASE_URL}/items/upload_photo`, console.log("API UPLOAD PHOTO ", item))
+    // axios.post(`${BASE_URL}/items/upload_photo`, item)
+    .then(res => store.dispatch(uploadPhoto(res.data)))
     .then(res => 
       res.data.message ?
         store.dispatch(sendMessage(res.data.message)) :
