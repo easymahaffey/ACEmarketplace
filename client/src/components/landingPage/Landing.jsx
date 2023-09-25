@@ -7,32 +7,34 @@ import LogIn from "../users/LogIn";
 import Register from "../users/Register";
 import FileUpload from "../picture/Upload";
 
-const Landing = () => {
+const Landing = ({ openModal, setOpenModal }) => {
   const navigate = useNavigate()
 
-    return(
+  return (
 
-      <div id="landing-area">
+    <div id="landing-area">
 
-        <div id="top-area">
+      <div id="top-area">
 
-          <div id="logo-area"><img className="logo" src={aceLogo} alt="ACE Logo" /></div>
+        <div id="logo-area"><img className="logo" src={aceLogo} alt="ACE Logo" /></div>
 
-          <SearchBar/>         
-          
-          <div id="logins">
-          <LogIn/>
-          <Register/>
-          <button className="buttons" onClick={()=> navigate('/Admin')}>Admin</button>
-          </div>
-          <div>
-            {/* <FileUpload /> */}
-          </div>
+        <SearchBar />
 
+        <div id="logins">
+          <LogIn />
+
+          <Register />
+
+          <button className="buttons" onClick={() => navigate('/Admin')}>Admin</button>
         </div>
-        {/* <Card /> */}
+        <div>
+          {/* <FileUpload /> */}
+        </div>
+
       </div>
-    )
+      {/* <Card /> */}
+    </div>
+  )
 }
 
 export default Landing

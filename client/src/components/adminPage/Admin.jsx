@@ -18,8 +18,8 @@ const Admin = () => {
     const [itemPictures, setItemPictures] = useState([])
     const [itemCategory, setItemCategory] = useState('')
 
+    
     const categories = ['Choose One','Funiture','Home Goods', 'Bedding','Clothing & Shoes', 'Jewelry & Accessories', 'Kids Stuff'  ]
-
     const handleAddItem = (e) => {
         e.preventDefault()
 
