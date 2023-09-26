@@ -3,6 +3,7 @@ import React from "react";
 // import { connect } from "react-redux";
 // import { toggleLogin } from "../../redux/actions/authActions";
 import API from "../../utils/API";
+import Upload from "../picture/Upload"
 
 
 class AddItem extends React.Component {
@@ -40,7 +41,9 @@ class AddItem extends React.Component {
   render() {
     return (
       <React.Fragment>
+        <Upload />
         <form onSubmit={this.handleSubmit}>
+        <h2>Add Item</h2>
           <input
             type="text"
             name="itemName"
@@ -59,6 +62,9 @@ class AddItem extends React.Component {
             required
           />
           <br />
+          {/* <Upload />
+          <br /> */}
+
           {/* <input
             type="file"
             name="itemPicture"
@@ -75,6 +81,7 @@ class AddItem extends React.Component {
             placeholder="Item Sku *"
             required
           />
+          <br />
           <input
             type="number"
             name="itemCartQuantity"
@@ -82,6 +89,7 @@ class AddItem extends React.Component {
             onChange={this.handleChange}
             placeholder="Item Cart Quantity"
           />
+          <br />
           <input
             type="number"
             name="itemWarehouseQuantity"
@@ -89,6 +97,7 @@ class AddItem extends React.Component {
             onChange={this.handleChange}
             placeholder="Item Warehouse Quantity"
           />
+          <br />
           <input
             type="number"
             name="itemCost"
@@ -97,6 +106,7 @@ class AddItem extends React.Component {
             placeholder="Item Cost *"
             required
           />
+          <br />
           <input
             type="number"
             name="itemListPrice"

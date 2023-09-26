@@ -24,6 +24,7 @@ const dispatch = useDispatch()
   return (
     <div>
       <form onSubmit={onSubmit}>
+      <h2>Upload Picture</h2>
         <input type="file" onChange={ handleChange } />
         <button type="submit">Upload</button>
       </form>

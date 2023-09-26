@@ -5,9 +5,10 @@ import aceLogo from '../../resources/logos/ACEMarketplacelogo.png'
 import SearchBar from '../search/SearchBar'
 import LogIn from "../users/LogIn";
 import Register from "../users/Register";
-import FileUpload from "../picture/Upload";
+// Test Components
 import Registration from "../testComponents/Registration";
 import AddItem from "../testComponents/AddItem";
+import DeleteItem from "../testComponents/DeleteItem";
 
 const Landing = () => {
 
@@ -30,9 +31,9 @@ const Landing = () => {
           <Register/>
           </div>
           <div className="test-components">
-            <FileUpload />
             <Registration />
             <AddItem />
+            <DeleteItem />
           </div>
 
         </div>

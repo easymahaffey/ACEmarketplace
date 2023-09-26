@@ -52,6 +52,7 @@ class Registration extends React.Component {
     return (
       <React.Fragment>
         <form className="login_modal" onSubmit={this.validatePassword}>
+        <h2>Register User</h2>
           <input
             type="text"
             name="firstName"
