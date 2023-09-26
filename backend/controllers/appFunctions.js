@@ -123,9 +123,9 @@ module.exports = {
       })
       .catch((err) => console.log(err));
   },
-  deleteItem: function (req, res) {
-    let { _id } = req.body;
-    Item.findByIdAndDelete({ _id })
+  deleteItem: async function (req, res) {
+    let { itemName } = req.body._id;
+    await Item.deleteOne({ itemName })
     .then(() => {
         res.json({ message: "Item deleted" });
       })
@@ -246,7 +246,6 @@ module.exports = {
       originalName: file.originalname,
       productName: file.productName,
     });
-
     newFile
       .save()
       .then((file) => res.json(file))
@@ -254,18 +253,6 @@ module.exports = {
         console.error("Error saving file to database:", err);
         res.status(500).send("Server Error");
       });
-    // Item.findByIdAndUpdate(
-    //   { _id },
-    //   { $set: updated },
-    //   { new: true },
-    //   (err, data) => {
-    //     if (err) {
-    //       console.log(err);
-    //     } else {
-    //       res.json(data);
-    //     }
-    //   }
-    // );
   },
   deleteUser: function (req, res) {
     let { _id } = req.body;

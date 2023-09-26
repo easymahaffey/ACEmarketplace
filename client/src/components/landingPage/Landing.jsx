@@ -6,13 +6,9 @@ import SearchBar from '../search/SearchBar'
 import LogIn from "../users/LogIn";
 import Register from "../users/Register";
 import Card from '../Card/card'
-
-// import FileUpload from "../picture/Upload";
-
-
-import FileUpload from "../picture/Upload";
 import Registration from "../testComponents/Registration";
 import AddItem from "../testComponents/AddItem";
+import DeleteItem from "../testComponents/DeleteItem";
 
 const Landing = ({ openModal, setOpenModal }) => {
   const navigate = useNavigate()
@@ -30,8 +26,26 @@ const Landing = ({ openModal, setOpenModal }) => {
 
           <Register />
 
+        <div id="top-area">
+
+          <div id="logo-area"><img className="logo" src={aceLogo} alt="ACE Logo" /></div>
+
+          
+          <SearchBar/>         
+          
+          <div id="logins">
+          <LogIn/>
+          <Register/>
+          </div>
+          <div className="test-components">
+            <Registration />
+            <AddItem />
+            <DeleteItem />
+          </div>
+
           <button className="buttons" onClick={() => navigate('/Admin')}>Admin</button>
         </div>
+
 
         <div>
           {/* <FileUpload /> */}

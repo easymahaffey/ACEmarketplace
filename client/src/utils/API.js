@@ -33,25 +33,23 @@ const API = {
   },
   addItem: (item) => {
     axios.post(BASE_URL + "/items/add_item", item)
-    .then(console.log("API ADD ITEM ", item), res => store.dispatch(getItems(res.data)))
-    // .then(res => store.dispatch(getItems(res.data)))
+    .then(res => store.dispatch(getItems(res.data)))
   },
   deleteItem: (_id) => {
-    axios.post(BASE_URL + "/items/delete", { _id }).then(res => store.dispatch(getItems(res.data)))
+    axios.post(BASE_URL + "/items/delete_item", { _id }).then(res => store.dispatch(getItems(res.data)))
   },
   editItem: (updatedItem) => {
     axios.post(BASE_URL + "/items/update", updatedItem).then(res => store.dispatch(getItems(res.data)))
   },
 
   uploadPhoto: (item) => {
-    // console.log("API UPLOAD PHOTO ", axios.post(`${BASE_URL}/items/upload_photo`, item))
     axios.post(`${BASE_URL}/items/upload_photo`, console.log("API UPLOAD PHOTO ", item))
     // axios.post(`${BASE_URL}/items/upload_photo`, item)
     .then(res => store.dispatch(uploadPhoto(res.data)))
-    .then(res => 
-      res.data.message ?
-        store.dispatch(sendMessage(res.data.message)) :
-        store.dispatch(uploadPhoto(res.data)))
+    // .then(res => 
+    //   res.data.message ?
+    //     store.dispatch(sendMessage(res.data.message)) :
+    //     store.dispatch(uploadPhoto(res.data)))
   },
   bringInItems: (_id) => {
     axios.post(BASE_URL + "/items", { _id }).then(res => store.dispatch(getItems(res.data)))
