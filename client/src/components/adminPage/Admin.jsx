@@ -39,7 +39,7 @@ const Admin = () => {
         API.addItem(newItem)
 
         setItemName('')
-        itemDescription(0)
+        setItemDescription('')
         setItemSku('')
         setItemCartQuantity(0)
         setItemWarehouseQuantity(0)
