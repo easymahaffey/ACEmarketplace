@@ -5,9 +5,10 @@ import aceLogo from '../../resources/logos/ACEMarketplacelogo.png'
 import SearchBar from '../search/SearchBar'
 import LogIn from "../users/LogIn";
 import Register from "../users/Register";
+import Card from '../Card/card'
 
 // import FileUpload from "../picture/Upload";
-import Card from "../card/card";
+
 
 import FileUpload from "../picture/Upload";
 import Registration from "../testComponents/Registration";
@@ -37,7 +38,7 @@ const Landing = ({ openModal, setOpenModal }) => {
         </div>
 
       </div>
-      {/* <Card /> */}
+      <Card />
     </div>
   )
 }
