@@ -1,20 +1,17 @@
 @import '../../variables.scss';
 
 #landing-area {
-    background-color: $light-green;
     height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
 #top-area{
-   
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-between;
-   
-
+  
+    background-color: $light-green;
 }
 
 #logo-area {
@@ -45,19 +42,18 @@
 }
 
 
+
 @media screen and (min-width: 600px){
     .logo{
         margin-left:2%;
     }
-}
-
-@media screen and (min-width: 600px){
 
     #top-area{
         height:30%;
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
+        justify-content: space-between;
       
     }
     #logo-area{

@@ -1,8 +1,11 @@
+import React, {useEffect, useState} from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.scss';
 import Landing from './components/landingPage/Landing';
-import Admin from "../src/components/admin/admin"
+import Admin from './components/adminPage/Admin';
 function App() {
+
+  
   return (
     <>
 
@@ -12,10 +15,14 @@ function App() {
         <Routes>
 
 
-          <Route path='/' element={<Landing/>} />
+          <Route path='/' element={ <Landing /> } />
+         
+            
+        
 
+          <Route path='/Admin' element={ <Admin/> } />
+                        
 
-          <Route path='/admin' element={<Admin/>} />
         </Routes>
 
 

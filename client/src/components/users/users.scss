@@ -1,37 +1,37 @@
 @import '../../variables.scss';
 
-.buttons{
+.buttons {
     background-color: white;
     font-size: 3vh;
-    color:$font-green;
+    color: $font-green;
     border-radius: 50%;
-    height:16vh;
-    width:7vw;
+    height: 16vh;
+    width: 8vw;
     margin: auto;
 
 }
 
-.login{
+.login {
     background-color: $dark-green;
-    color:$light-green;
+    color: $light-green;
 }
 
-.logout{
+.logout {
     background-color: $font-green;
-    color:$light-green;
+    color: $light-green;
 
 }
-.register{
+
+.register {
     background-color: $med-green;
-    color:$font-green;
+    color: $font-green;
 }
 
-.modals{
-    
+.modals {
     position: fixed;
     z-index: 1;
     left: 20%;
-    top: 10%;
+    top: 5%;
     width: 50%;
     height: auto;
     overflow: auto;
@@ -41,15 +41,16 @@
     padding: 2%;
 }
 
-.close-btn{
+.close-btn {
     width: fit-content;
     padding: 2%;
-    justify-content: right;
+    text-align: right;
     color: $light-green;
     background-color: $dark-green;
+
 }
 
-#registration-form{
+.modal-forms {
     width: 50%;
     height: auto;
     margin: auto;
@@ -62,11 +63,13 @@
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
-    color:$font-green;
+    color: $font-green;
+    border-radius: 33px;
+    text-indent: 2%;
 }
 
-.labels{
-    color:$light-green;
+.labels {
+    color: $light-green;
     font-family: $reg-font;
     font-weight: bold;
     font-size: 4vh;
@@ -75,7 +78,16 @@
 
 }
 
-.submit-btn{
-    margin: 1% 40%;
+.submit-btn {
+    margin: 1% 35%;
 }
 
+
+@media screen and (min-width: 600px) {
+    
+    .buttons {
+        height: 16vh;
+        width: 8vw;
+    }
+
+}
