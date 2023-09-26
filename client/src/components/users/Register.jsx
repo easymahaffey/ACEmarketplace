@@ -37,7 +37,7 @@ const Register = () => {
         }
 
         API.register(newUser)
-
+        setOpenRegister(false)
         setEmail('')
         setFirstName('')
         setLastName('')

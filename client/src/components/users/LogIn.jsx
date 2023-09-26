@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import API from '../../utils/API'
 import './users.scss'
-import CloseModal from "../reusable/closeModal";
+
 
 
 const LogIn = () => {
@@ -17,7 +17,6 @@ const LogIn = () => {
         setShowLogIn(false)
         setShowLogOut(true)
         setOpenLogIn(true)
-       
     }
 
     const handleLogOut = () => {
@@ -32,11 +31,13 @@ const LogIn = () => {
 
     const handleCheckUser = (e) => {
         e.preventDefault()
+       
         const checkUser = {
             email: checkEmail,
             password: checkPassword
         }
         API.login(checkUser)
+        setOpenLogIn(false)
         setCheckEmail('')
         setCheckPassword('')
 
@@ -63,7 +64,7 @@ const LogIn = () => {
                         <label className="labels" htmlFor="email">Email</label>
                         <input className="modal-inputs" onChange={(e) => setCheckEmail(e.target.value)} id="userName" value={checkEmail} type="text" name="email" />
                         <label className="labels" htmlFor="password">Password</label>
-                        <input className="modal-inputs" onChange={(e) => setCheckPassword(e.target.value)} id="password" value={checkPassword} name="password1" />
+                        <input className="modal-inputs" onChange={(e) => setCheckPassword(e.target.value)} id="password" type="password" value={checkPassword} name="password1" />
 
                         <button className="buttons submit-btn" onClick={handleCheckUser}>Submit</button>
 
