@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import mockData from '../../data'
 import './search.scss'
-import CloseModal from "../reusable/closeModal";
 
 
-
-const SearchBar = () => {
+const SearchBar = ({itemDisplayList, setItemDisplayList}) => {
 
     const [matchesList, setMatchesList] = useState(mockData)
     const [search, setSearch] = useState('')
@@ -18,6 +16,10 @@ const SearchBar = () => {
         setNoMatches(false)
     }
 
+    const handleReset = ()=>{
+        setItemDisplayList(mockData)
+    }
+
     const handleSearch = (e) => {
         e.preventDefault()
         setSearch('')
@@ -28,10 +30,10 @@ const SearchBar = () => {
             item.itemCategory.toLowerCase().includes(search.toLowerCase())
             // item.itemPrice.toLowerCase().includes(search.toLowerCase())
         )
-
+        
         if (filterTest.length > 0) {
             // setNoMatches(false)
-            setMatchesList(filterTest)
+            setItemDisplayList(filterTest)
         } else {
             setNoMatches(true)
         }
@@ -46,6 +48,7 @@ const SearchBar = () => {
           item.itemCategory == categoryChoice
         )
         console.log(categoryFilter)
+        setItemDisplayList(categoryFilter)
       
     
     }
@@ -60,11 +63,12 @@ const SearchBar = () => {
                 </div>
            
             <div id="category-area">
+                    <button onClick={handleReset} value={"All"} className="cat-buttons">All</button>
                     <button onClick={(e)=>{handleCategory(e.target.value)}} value={"Furniture"} className="cat-buttons">Furniture</button>
                     <button onClick={(e)=>{handleCategory(e.target.value)}} value={"Home Goods"} className="cat-buttons">Home Goods</button>
                     <button onClick={(e)=>{handleCategory(e.target.value)}} value={"Bedding"} className="cat-buttons">Bedding</button>
                     <button onClick={(e)=>{handleCategory(e.target.value)}} value={"Clothing & Shoes"} className="cat-buttons">Clothing & Shoes</button>
-                    <button onClick={(e)=>{handleCategory(e.target.value)}} value={"Jewelry & Accessories"} className="cat-buttons">Jewelry & Accessories</button>
+                    <button onClick={(e)=>{handleCategory(e.target.value)}} value={"Jewelery and Accessories"} className="cat-buttons">Jewelery & Accessories</button>
                     <button onClick={(e)=>{handleCategory(e.target.value)}} value={"Kids Stuff"} className="cat-buttons">Kids Stuff</button>
             </div>
             </div>

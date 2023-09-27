@@ -4,11 +4,14 @@ import furniture from "../../resources/logos/furniture.png";
 import mockData from '../../data'
 import './card.scss'
 
-const Card = ({itemName, itemDescription,itemPrice}) => {
+const Card = ({}) => {
 
     return(
         <>
 
+        <div className = "cardProductContainer">
+        {mockData.map((item) => {  
+            return( 
         <div className="flipCard">
         
         
@@ -24,9 +27,9 @@ const Card = ({itemName, itemDescription,itemPrice}) => {
                         <img className="backPage"src={backPage} alt="backPage-logo"/>
            
                         <div className="productInfo">  
-                           <h2>{itemName}</h2>
-                            <p >{itemDescription}</p>
-                            <h4 >{itemPrice}</h4>
+                           <h2>{item.itemName}</h2>
+                            <p >{item.itemDescription}</p>
+                            <h4 >{item.itemPrice}</h4>
         
         
                         </div>    
@@ -34,9 +37,32 @@ const Card = ({itemName, itemDescription,itemPrice}) => {
                         </div>
                     </div>
                 
+                </div>)})}
+                
+        
+        
                 </div>
-
-
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         </>
         )
