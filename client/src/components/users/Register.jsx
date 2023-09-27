@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import API from '../../utils/API'
 import './users.scss'
-import CloseModal from "../reusable/closeModal";
+
 
 const Register = () => {
 
