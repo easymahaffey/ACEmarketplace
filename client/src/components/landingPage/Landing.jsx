@@ -12,12 +12,10 @@ import AddItem from "../testComponents/AddItem";
 import DeleteItem from "../testComponents/DeleteItem";
 
 
-const Landing = ({ itemDisplayList, setItemDisplayList }) => {
+const Landing = ({ itemDisplayList, setItemDisplayList, category, setCategory}) => {
   const navigate = useNavigate()
+ 
 
-  const resetList = ()=>{
-    setItemDisplayList(mockData)
-  }
 
   return (
 
@@ -29,6 +27,8 @@ const Landing = ({ itemDisplayList, setItemDisplayList }) => {
         <SearchBar
              itemDisplayList={itemDisplayList}
              setItemDisplayList={setItemDisplayList}
+             category={category}
+             setCategory={setCategory}
         />
         <div id="logins">
           <LogIn />
@@ -49,6 +49,8 @@ const Landing = ({ itemDisplayList, setItemDisplayList }) => {
       {/* <div>
           <FileUpload />
         </div> */}
+        <div className="admin">{category} For Sale</div>
+   
       <div className="cardProductContainer">
         <ItemMap
           array={itemDisplayList}

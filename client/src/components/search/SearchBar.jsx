@@ -3,7 +3,7 @@ import mockData from '../../data'
 import './search.scss'
 
 
-const SearchBar = ({itemDisplayList, setItemDisplayList}) => {
+const SearchBar = ({itemDisplayList, setItemDisplayList, category, setCategory}) => {
 
     const [matchesList, setMatchesList] = useState(mockData)
     const [search, setSearch] = useState('')
@@ -18,10 +18,14 @@ const SearchBar = ({itemDisplayList, setItemDisplayList}) => {
 
     const handleReset = ()=>{
         setItemDisplayList(mockData)
+        setCategory("All")
     }
 
     const handleSearch = (e) => {
+       
+        console.log(category)
         e.preventDefault()
+       
         setSearch('')
 
         let filterTest = mockData.filter((item) =>
@@ -34,6 +38,8 @@ const SearchBar = ({itemDisplayList, setItemDisplayList}) => {
         if (filterTest.length > 0) {
             // setNoMatches(false)
             setItemDisplayList(filterTest)
+        
+           
         } else {
             setNoMatches(true)
         }
@@ -49,6 +55,7 @@ const SearchBar = ({itemDisplayList, setItemDisplayList}) => {
         )
         console.log(categoryFilter)
         setItemDisplayList(categoryFilter)
+        setCategory(categoryChoice)
       
     
     }
