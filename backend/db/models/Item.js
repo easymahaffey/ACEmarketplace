@@ -29,9 +29,6 @@ const ItemSchema = mongoose.Schema({
     itemDescription: {
         type: String
     },
-    itemCategory: {
-        type: String
-    },
     itemDescription: {
         type: String
     },
