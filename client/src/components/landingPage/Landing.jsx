@@ -10,19 +10,14 @@ import Card from '../Card/card'
 import Registration from "../testComponents/Registration";
 import AddItem from "../testComponents/AddItem";
 import DeleteItem from "../testComponents/DeleteItem";
-
+import GetItem from "../testComponents/GetItem";
 
 const Landing = ({ itemDisplayList, setItemDisplayList, category, setCategory}) => {
   const navigate = useNavigate()
- 
-
 
   return (
-
     <div id="landing-area">
-
       <div id="top-area">
-
         <div id="logo-area"><img className="logo" src={aceLogo} alt="ACE Logo" /></div>
         <SearchBar
              itemDisplayList={itemDisplayList}
@@ -32,19 +27,22 @@ const Landing = ({ itemDisplayList, setItemDisplayList, category, setCategory}) 
         />
         <div id="logins">
           <LogIn />
-
           <Register />
         </div>
-
-        {/* <div className="test-components">
-            <Registration />
+          
+          <SearchBar/>         
+          <div id="logins">
+          <LogIn/>
+          <Register/>
+          </div>
+          <div className="test-components">
+            {/* <Registration /> */}
             <AddItem />
-            <DeleteItem />
-          </div> */}
-
+            {/* <DeleteItem /> */}
+            <GetItem />
+          </div>
         <button className="buttons" onClick={() => navigate('/Admin')}>Admin</button>
       </div>
-
 
       {/* <div>
           <FileUpload />

@@ -1,4 +1,4 @@
-import { OPEN_ITEM_MODAL, CLOSE_ITEM_MODAL, NO_HAMBURGER, GET_HAMBURGER, CLOSE_MENU, OPEN_MENU, GET_ITEMS, UPLOAD_PHOTO } from '../types'
+import { OPEN_ITEM_MODAL, CLOSE_ITEM_MODAL, NO_HAMBURGER, GET_HAMBURGER, CLOSE_MENU, OPEN_MENU, GET_ITEM, GET_ITEMS, UPLOAD_PHOTO } from '../types'
 
 export const openItemModal = () =>{
     return {
@@ -33,6 +33,14 @@ export const closeMenu = () => {
 export const openMenu = () => {
     return {
         type: OPEN_MENU
+    }
+}
+
+export const getItem = (item) =>{
+    console.log("ACTION GET ITEM ", item)
+    return {
+        type: GET_ITEM,
+        payload: item
     }
 }
 

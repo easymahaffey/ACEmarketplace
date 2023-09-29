@@ -1,3 +1,4 @@
+const { log } = require("console");
 const Item = require("../db/models/Item");
 const User = require("../db/models/User");
 
@@ -46,25 +47,25 @@ module.exports = {
     Item.findOne({ itemName })
       .then((data) => {
         if (!data) {
-          newItem.save()
-          .then(() => {
-            res.status(200).json({
-              message: "Item added",
-              itemName,
-              itemCategory,
-              itemDescription,
-              itemPicture,
-              itemSku,
-              itemCartQuantity,
-              itemWarehouseQuantity,
-              itemCost,
-              itemPrice
+          newItem
+            .save()
+            .then(() => {
+              res.status(200).json({
+                message: "Item added",
+                itemName,
+                itemCategory,
+                itemPicture,
+                itemSku,
+                itemCartQuantity,
+                itemWarehouseQuantity,
+                itemCost,
+                itemListPrice,
+              });
+            })
+            .catch((saveErr) => {
+              console.error("Error saving item:", saveErr);
+              res.status(500).json({ message: "Error saving item" });
             });
-          })
-          .catch(saveErr => {
-            console.error("Error saving item:", saveErr);
-            res.status(500).json({ message: "Error saving item" });
-          });
         } else {
           res.json({ message: "Item already exists" });
         }
@@ -114,8 +115,9 @@ module.exports = {
       item.itemDescription = itemDescription;
     }
     let newItem = item;
-    newItem.save((err, data))
-    .then((data) => {
+    newItem
+      .save((err, data))
+      .then((data) => {
         User.findByIdAndUpdate(
           { _id: data.userId },
           { $push: { items: data._id } },
@@ -135,7 +137,7 @@ module.exports = {
   deleteItem: async function (req, res) {
     let { itemName } = req.body._id;
     await Item.deleteOne({ itemName })
-    .then(() => {
+      .then(() => {
         res.json({ message: "Item deleted" });
       })
       .catch((err) => console.log(err));
@@ -143,7 +145,7 @@ module.exports = {
   deleteCartItem: function (req, res) {
     let { _id } = req.body;
     Item.findByIdAndDelete({ _id })
-    .then((data) => {
+      .then((data) => {
         User.findByIdAndUpdate(
           { _id: data.userId },
           { $pull: { items: data._id } },
@@ -233,6 +235,30 @@ module.exports = {
         }
       }
     );
+  },
+  getItem: async function (req, res) {
+      const { itemName, itemSku } = req.body; 
+      let item = {};
+      if (!itemName && !itemSku) {
+        return res.json({ message: "Please enter an item name or sku" });
+      }
+      if (itemName && itemSku) {
+        return res.json({ message: "Please enter only one: an item name OR sku" });
+      }
+      if (itemName !== "" && itemSku === "") {
+        item = await Item.findOne({ itemName })
+        .then((data) => {
+            res.json({message: "Here is your item NAME request", data});
+          })
+        .catch((err) => console.log(err)); 
+      }
+      if (itemSku !== "" && itemName === "") {
+        item = await Item.findOne({ itemSku })
+        .then((data) => {
+            res.json({message: "Here is your item SKU request", data});
+          })
+        .catch((err) => console.log(err)); 
+      }
   },
   getItems: function (req, res) {
     let { _id } = req.body;

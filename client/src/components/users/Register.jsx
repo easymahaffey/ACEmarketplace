@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import API from '../../utils/API'
 import './users.scss'
 
-
 const Register = () => {
 
     const [showRegister, setShowRegister] = useState(true)
@@ -13,11 +12,9 @@ const Register = () => {
     const [password1, setPassword1] = useState('')
     const [password2, setPassword2] = useState('')
 
-
     const handleRegister = () => {
         setShowRegister(false)
         setOpenRegister(true)
-
     }
 
     const closeRegister = () => {
@@ -34,6 +31,8 @@ const Register = () => {
             email: email,
             password1: password1,
             password2: password2,
+            //should I be only sending the password 1 to the backend as just password becuase the schema just shows password?
+            // ** Send both when registering **
         }
 
         API.register(newUser)
@@ -44,7 +43,6 @@ const Register = () => {
         setPassword1('')
         setPassword2('')
         console.log(newUser)
-
     }
 
     return (
@@ -52,7 +50,6 @@ const Register = () => {
             {showRegister && (
                 <button className="buttons register" onClick={handleRegister}>Register</button>
             )}
-
             {openRegister && (
                 <div className="modals">
                     <div className="close-btn" onClick={closeRegister}>X</div>
@@ -67,9 +64,7 @@ const Register = () => {
                         <input className="modal-inputs" onChange={(e) => setPassword1(e.target.value)} id="password1" value={password1} type="password" name="password1" />
                         <label className="labels" htmlFor="password2">Confirm Password</label>
                         <input className="modal-inputs" onChange={(e) => setPassword2(e.target.value)} id="password2" value={password2} type="password" name="password2" />
-
                         <button className="buttons submit-btn" onClick={handleAddUser}>Submit</button>
-
                     </div>
                 </div>
             )}
