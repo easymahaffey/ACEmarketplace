@@ -37,7 +37,6 @@ export const openMenu = () => {
 }
 
 export const getItem = (item) =>{
-    console.log("ACTION GET ITEM ", item)
     return {
         type: GET_ITEM,
         payload: item

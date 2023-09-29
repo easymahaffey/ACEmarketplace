@@ -12,12 +12,14 @@ class AddItem extends React.Component {
     this.state = {
       itemName: "",
       itemCategory: "",
+      itemDescription: "",
       itemPicture: "",
       itemSku: "",
       itemCartQuantity: "",
       itemWarehouseQuantity: "",
       itemCost: "",
       itemListPrice: "",
+      itemPrice: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -41,7 +43,7 @@ class AddItem extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Upload />
+        {/* <Upload /> */}
         <form onSubmit={this.handleSubmit}>
         <h2>Add Item</h2>
           <input
@@ -59,6 +61,15 @@ class AddItem extends React.Component {
             value={this.state.itemCategory}
             onChange={this.handleChange}
             placeholder="Item Category *"
+            required
+          />
+          <br />
+          <input
+            type="text"
+            name="itemDescription"
+            value={this.state.itemDescription}
+            onChange={this.handleChange}
+            placeholder="Item Description *"
             required
           />
           <br />
@@ -112,7 +123,16 @@ class AddItem extends React.Component {
             name="itemListPrice"
             value={this.state.itemListPrice}
             onChange={this.handleChange}
-            placeholder="Item List Price *"
+            placeholder="Item List (MSRP) Price *"
+            required
+          />
+          <br />
+          <input
+            type="number"
+            name="itemPrice"
+            value={this.state.itemPrice}
+            onChange={this.handleChange}
+            placeholder="Item Shelf Price *"
             required
           />
           <br />

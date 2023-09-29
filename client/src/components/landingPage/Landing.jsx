@@ -9,12 +9,11 @@ import ItemMap from "../mapping/ItemMap"
 
 import Card from '../card/card'
 
-
-
 import Registration from "../testComponents/Registration";
 import AddItem from "../testComponents/AddItem";
 import DeleteItem from "../testComponents/DeleteItem";
 import GetItem from "../testComponents/GetItem";
+import GetAllItems from "../testComponents/Get_All_Items";
 
 
 const Landing = ({ itemDisplayList, setItemDisplayList, category, setCategory}) => {
@@ -38,21 +37,13 @@ const Landing = ({ itemDisplayList, setItemDisplayList, category, setCategory}) 
           <button className="buttons" onClick={() => navigate('/Admin')}>Admin</button>
         </div>
 
-        
-
-
-
         {/* <div className="test-components">
             <Registration />
             <AddItem />
-            <DeleteItem />
-          </div> */}
-
-        
-
-          
-
-  
+            {/* <DeleteItem /> */}
+            {/* <GetItem /> */}
+            <GetAllItems />
+          </div>
 
       {/* <div>
           <FileUpload />

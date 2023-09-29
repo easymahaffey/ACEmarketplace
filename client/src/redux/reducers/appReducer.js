@@ -5,7 +5,7 @@ const initialState = {
     hamburger: true,
     menu: true,
     item: [],
-    items: []
+    items: [],
 }
 
 const appReducer = (state = initialState, action) => {

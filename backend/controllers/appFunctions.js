@@ -261,6 +261,39 @@ module.exports = {
       }
   },
   getItems: function (req, res) {
+    // let { _id } = req.body;
+    // let items = {};
+    Item.find()
+      .populate({ path: "items", options: { sort: { itemName: 1 } } })
+      .exec((err, data) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log("GET ITEMS ", data);
+          res.json(data.items);
+        }
+      });
+  },
+  get_All_Items:  async function (req, res) {
+    console.log("appFunctions.jsx GET ALL REQ BODY ", req.body);
+    // let { _id } = req.body;
+    // let items = {};
+    await Item.find()
+      .then((data) => {
+        console.log("appFunctions.jsx GET ALL ITEMS ", data);
+        res.json(data);
+      })
+      // .populate({ path: "items", options: { sort: { itemName: 1 } } })
+      // .exec((err, data) => {
+      //   if (err) {
+      //     console.log(err);
+      //   } else {
+      //     console.log("GET ITEMS ", data);
+      //     res.json(data.items);
+      //   }
+      // });
+  },
+  getCartItems: function (req, res) {
     let { _id } = req.body;
     User.findById({ _id })
       .populate({ path: "items", options: { sort: { itemName: 1 } } })
