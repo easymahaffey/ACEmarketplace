@@ -45,6 +45,11 @@ const API = {
       .post(BASE_URL + "/items/get_item", item)
       .then((res) => store.dispatch(getItem(res.data)))
   },
+  getAllItems: () => {
+    axios
+      .post(BASE_URL + "/items/get_all_items")
+      .then((res) => store.dispatch(getItems(res.data)))
+  },
   deleteItem: (_id) => {
     axios
       .post(BASE_URL + "/items/delete_item", { _id })

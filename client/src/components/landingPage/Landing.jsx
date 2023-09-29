@@ -10,6 +10,7 @@ import Registration from "../testComponents/Registration";
 import AddItem from "../testComponents/AddItem";
 import DeleteItem from "../testComponents/DeleteItem";
 import GetItem from "../testComponents/GetItem";
+import GetAllItems from "../testComponents/Get_All_Items";
 
 const Landing = () => {
 
@@ -35,7 +36,8 @@ const Landing = () => {
             {/* <Registration /> */}
             <AddItem />
             {/* <DeleteItem /> */}
-            <GetItem />
+            {/* <GetItem /> */}
+            <GetAllItems />
           </div>
 
         </div>

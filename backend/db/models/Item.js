@@ -41,10 +41,10 @@ const ItemSchema = mongoose.Schema({
     itemCost: {
         type: Number
     },
-    itemPrice: {
+    itemListPrice: {
         type: Number
     },
-    itemListPrice: {
+    itemPrice: {
         type: Number
     },
     itemPictures: [ PictureSchema ]
