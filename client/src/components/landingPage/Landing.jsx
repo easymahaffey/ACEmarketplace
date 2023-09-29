@@ -6,10 +6,10 @@ import SearchBar from '../search/SearchBar'
 import LogIn from "../users/LogIn";
 import Register from "../users/Register";
 import ItemMap from "../mapping/ItemMap"
-import Card from '../Card/card'
-import Registration from "../testComponents/Registration";
-import AddItem from "../testComponents/AddItem";
-import DeleteItem from "../testComponents/DeleteItem";
+import Card from '../card/card'
+// import Registration from "../testComponents/Registration";
+// import AddItem from "../testComponents/AddItem";
+// import DeleteItem from "../testComponents/DeleteItem";
 
 
 const Landing = ({ itemDisplayList, setItemDisplayList }) => {
