@@ -66,7 +66,7 @@ const SearchBar = ({itemDisplayList, setItemDisplayList, category, setCategory})
             <div id="search-area">
                 <div id="bar-area">
                 <input className="search-bar" onChange={(e) => setSearch(e.target.value)} value={search} />
-                <button onClick={handleSearch} className='search-button buttons'>Search</button>
+                <button onClick={handleSearch} className='search-button'>Search</button>
                 </div>
            
             <div id="category-area">

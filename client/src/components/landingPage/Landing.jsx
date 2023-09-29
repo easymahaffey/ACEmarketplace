@@ -6,11 +6,16 @@ import SearchBar from '../search/SearchBar'
 import LogIn from "../users/LogIn";
 import Register from "../users/Register";
 import ItemMap from "../mapping/ItemMap"
-import Card from '../Card/card'
+
+import Card from '../card/card'
+
+
+
 import Registration from "../testComponents/Registration";
 import AddItem from "../testComponents/AddItem";
 import DeleteItem from "../testComponents/DeleteItem";
 import GetItem from "../testComponents/GetItem";
+
 
 const Landing = ({ itemDisplayList, setItemDisplayList, category, setCategory}) => {
   const navigate = useNavigate()
@@ -19,30 +24,35 @@ const Landing = ({ itemDisplayList, setItemDisplayList, category, setCategory}) 
     <div id="landing-area">
       <div id="top-area">
         <div id="logo-area"><img className="logo" src={aceLogo} alt="ACE Logo" /></div>
+
         <SearchBar
              itemDisplayList={itemDisplayList}
              setItemDisplayList={setItemDisplayList}
              category={category}
              setCategory={setCategory}
         />
+
         <div id="logins">
           <LogIn />
           <Register />
+          <button className="buttons" onClick={() => navigate('/Admin')}>Admin</button>
         </div>
-          
-          <SearchBar/>         
-          <div id="logins">
-          <LogIn/>
-          <Register/>
-          </div>
-          <div className="test-components">
-            {/* <Registration /> */}
+
+        
+
+
+
+        {/* <div className="test-components">
+            <Registration />
             <AddItem />
-            {/* <DeleteItem /> */}
-            <GetItem />
-          </div>
-        <button className="buttons" onClick={() => navigate('/Admin')}>Admin</button>
-      </div>
+            <DeleteItem />
+          </div> */}
+
+        
+
+          
+
+  
 
       {/* <div>
           <FileUpload />
