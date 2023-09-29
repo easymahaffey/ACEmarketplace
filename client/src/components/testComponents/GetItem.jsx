@@ -13,7 +13,7 @@ const GetItem = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    API.getItem(item)
+    API.getItem(item);
     setItemNameInput("");
     setItemSkuInput("");
   };
@@ -45,7 +45,8 @@ const GetItem = () => {
       <div className="displayItem">
         <p>{appItem.message}</p>
         {appItem?.data === undefined ? <p>No data available</p> : <p>Item Name: {appItem.data.itemName}</p>}
-        {appItem?.data === undefined ? <p>No data available</p> : <p>Iitem Category: {appItem.data.itemCategory}</p>}
+        {appItem?.data === undefined ? <p>No data available</p> : <p>Item Category: {appItem.data.itemCategory}</p>}
+        {appItem?.data === undefined ? <p>No data available</p> : <p>Item Description: {appItem.data.itemDescription}</p>}
         {appItem?.data === undefined ? <p>No data available</p> : <p>Item SKU: {appItem.data.itemSku}</p>}
         {appItem?.data === undefined ? <p>No data available</p> : <p>Item Warehouse Quantity{appItem.data.itemWarehouseQuantity}</p>}
         {appItem?.data === undefined ? <p>No data available</p> : <p>Item Cart Quantity{appItem.data.itemCartQuantity}</p>}
