@@ -3,6 +3,7 @@ const router = require(express).Router()
 const controller = require("../controllers")
 
 router.route("/").post(controller.getItems)
+router.route("/get_item").post(controller.getItem)
 router.route("/add_item").post(controller.addItem)
 router.route("/delete_item").post(controller.deleteItem)
 router.route("/update_item").post(controller.updateItem)

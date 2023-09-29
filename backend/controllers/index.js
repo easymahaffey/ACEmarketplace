@@ -9,6 +9,7 @@ module.exports = {
     addItem: appFunctions.addItem,
     deleteItem: appFunctions.deleteItem,
     updateItem: appFunctions.editItem,
+    getItem: appFunctions.getItem,
     getItems: appFunctions.getItems,
     uploadPhoto: appFunctions.uploadPhoto,
     deleteUser: appFunctions.deleteUser

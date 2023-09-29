@@ -9,6 +9,7 @@ import Register from "../users/Register";
 import Registration from "../testComponents/Registration";
 import AddItem from "../testComponents/AddItem";
 import DeleteItem from "../testComponents/DeleteItem";
+import GetItem from "../testComponents/GetItem";
 
 const Landing = () => {
 
@@ -31,9 +32,10 @@ const Landing = () => {
           <Register/>
           </div>
           <div className="test-components">
-            <Registration />
+            {/* <Registration /> */}
             <AddItem />
-            <DeleteItem />
+            {/* <DeleteItem /> */}
+            <GetItem />
           </div>
 
         </div>
