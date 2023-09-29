@@ -25,6 +25,7 @@
     align-self: center;
     font-size: 5vh;
     font-family: $heading-font;
+    
 }
 
 #admin-form{
@@ -69,7 +70,7 @@
 }
 
 
-@media screen and (min-width: 600px){
+@media screen and (max-width: 600px){
     .top-area{
         flex-direction: row;
         gap:25%;
@@ -86,10 +87,7 @@
          
     }
   
-    .buttons {
-        height: 16vh;
-        width: 8vw;
-    }
+
 
 
 

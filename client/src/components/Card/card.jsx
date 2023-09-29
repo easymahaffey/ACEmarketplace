@@ -24,9 +24,9 @@ const Card = ({itemName, itemDescription,itemPrice}) => {
                         <img className="backPage"src={backPage} alt="backPage-logo"/>
            
                         <div className="productInfo">  
-                           <h2>{itemName}</h2>
-                            <p >{itemDescription}</p>
-                            <h4 >{itemPrice}</h4>
+                           <h2 className="productTitle">{itemName}</h2>
+                            <p className="productDescription">{itemDescription}</p>
+                            <h4 className="productPrice">${itemPrice}</h4>
         
         
                         </div>    

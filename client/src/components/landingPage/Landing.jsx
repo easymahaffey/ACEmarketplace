@@ -26,15 +26,19 @@ const Landing = ({ itemDisplayList, setItemDisplayList }) => {
       <div id="top-area">
 
         <div id="logo-area"><img className="logo" src={aceLogo} alt="ACE Logo" /></div>
-        <SearchBar
-             itemDisplayList={itemDisplayList}
-             setItemDisplayList={setItemDisplayList}
-        />
+        
         <div id="logins">
           <LogIn />
 
           <Register />
+          <button className="buttons" onClick={() => navigate('/Admin')}>Admin</button>
         </div>
+        
+        <SearchBar
+             itemDisplayList={itemDisplayList}
+             setItemDisplayList={setItemDisplayList}
+        />
+
 
         {/* <div className="test-components">
             <Registration />
@@ -42,7 +46,7 @@ const Landing = ({ itemDisplayList, setItemDisplayList }) => {
             <DeleteItem />
           </div> */}
 
-        <button className="buttons" onClick={() => navigate('/Admin')}>Admin</button>
+        
       </div>
 
 
