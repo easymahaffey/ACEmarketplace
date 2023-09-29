@@ -1,8 +1,15 @@
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.scss';
 import Landing from './components/landingPage/Landing';
-import Admin from "../src/components/admin/admin"
+import Admin from './components/adminPage/Admin';
+import mockData from './data';
 function App() {
+
+  const [itemDisplayList, setItemDisplayList] = useState(mockData)
+  const [category, setCategory] = useState("All")
+  console.log(itemDisplayList)
+
   return (
     <>
 
@@ -12,10 +19,18 @@ function App() {
         <Routes>
 
 
-          <Route path='/' element={<Landing/>} />
+          <Route path='/' element={
+            <Landing
+              itemDisplayList={itemDisplayList}
+              setItemDisplayList={setItemDisplayList}
+              category={category}
+              setCategory={setCategory}
+            />} />
 
 
-          <Route path='/admin' element={<Admin/>} />
+          <Route path='/Admin' element={<Admin />} />
+
+
         </Routes>
 
 

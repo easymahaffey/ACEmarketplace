@@ -1,13 +1,23 @@
 @import '../../variables.scss';
 
 
+.cardProductContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+   
+    
+}
+
 .flipCard {
     background-color: transparent;
     width: 300px;
     height: 300px;
     perspective: 1000px;
+    margin: 55px;
   }
-  
+ 
   .flip-card-inner {
     position: relative;
     width: 100%;
@@ -17,11 +27,11 @@
     transform-style: preserve-3d;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   }
-  
+ 
   .flipCard:hover .flip-card-inner {
     transform: rotateY(180deg);
   }
-  
+ 
   .flipCard-Front, .flipCard-Back {
     position: absolute;
     width: 100%;
@@ -29,28 +39,200 @@
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
   }
-  
+ 
   .flipCard-Front {
     background-color: $light-green;
     color: black;
   }
-  
+ 
   .flipCard-Back {
+
 
     color: white;
     transform: rotateY(180deg);
   }
 
+
   .backPage{
     width:300px;
   }
 
-  #furniture{
-    width: 250px;
 
+  .furniture{
+    width: 250px;
   }
+
+
 
   .productInfo{
     position: relative;
-    bottom: 230px;
+    bottom:270px;
+    background-color: #F8F0E5;
+    border-radius: 50px;
+  }
+  .productTitle{
+    color: $font-green;
+    font-family: $heading-font;
+  }
+  .productDescription{
+    color: $font-green;
+    font-family: $reg-font;
+  }
+  .productPrice{
+    color: $font-green;
+  }
+
+
+  @media screen and (max-width: 1080px){
+
+.cardProductContainer{
+ 
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+margin-top: 45px;
+margin-left: 105px;
+
+}
+.flipCard{
+    margin: 5px;
+}
+
+
+
+  }
+  @media screen and (max-width: 900px){
+
+.cardProductContainer{
+ 
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+margin-top: 45px;
+}
+
+
+
+  }
+  @media screen and (max-width: 600px){
+
+.cardProductContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50%;
+  margin-left: 2%;
+
+   
+}
+
+.productInfo{
+  margin-top: -35px;
+  border-radius: 50px;
+  background-color: #F8F0E5;
+  
+  }
+  .productTitle{
+ 
+   
+    color: $font-green;
+    margin: 15px;
+  }
+  .productDescription{
+  
+    color: $font-green;
+  
+  }
+  .productPrice{
+    color: $font-green;
+  }
+
+  }
+
+
+  @media screen and (max-width: 300px){
+.cardProductContainer{
+  position: relative;
+  top: 45%;
+  right: -2%;
+  left: -28%;
+}
+.furniture{
+  width: 55vw;
+}
+
+.backPage{
+  width: 78vw;
+  height: 28vh;
+  margin-left: 65px;
+}
+.productInfo{
+
+margin-top: 105px;
+margin-left: 65px;
+border-radius: 70px;
+background-color: #F8F0E5;
+
+}
+.productTitle{
+  font-size: 1.0rem;
+  margin-bottom: 3px;
+  color: $font-green;
+  margin: 15px;
+}
+.productDescription{
+  font-size: 0.84rem;
+  color: $font-green;
+
+}
+.productPrice{
+  color: $font-green;
+}
+.flipCard:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flipCard {
+  background-color: transparent;
+  width: 100vw;
+  height: 28vh;
+  perspective: 1000px;
+  margin: 25px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+}
+
+.flipCard:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flipCard-Front, .flipCard-Back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flipCard-Front {
+  background-color: $light-green;
+  color: black;
+}
+
+.flipCard-Back {
+  width: 100vw;
+  height: 28vh;
+
+  color: white;
+  transform: rotateY(180deg);
+}
   }

@@ -1,32 +1,30 @@
 @import '../../variables.scss';
 
 #landing-area {
-    background-color: $light-green;
     height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
 #top-area{
-   
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-between;
-   
-
+    height: 100%;
+    background-color: $light-green;
 }
 
 #logo-area {
-    height: 25%;
+    height: 40%;
 }
 
 .logo {
-    display: block;
+    // display: block;
     margin-left: auto;
     margin-right: auto;
+    
     height: 100%;
-    width: auto;
+    margin: auto;
 }
 
 #search-area{
@@ -40,24 +38,36 @@
 #logins{
     display: flex;
     flex-direction: row;
-    gap: 10%;
-    margin-right:2%;
+    // gap: 8%;
+    // margin-right:2%;
+  
+    
+
 }
 
+@media screen and (max-width: 900px){
 
-@media screen and (min-width: 600px){
-    .logo{
-        margin-left:2%;
+    #top-area{
+        height: 60%;
+    }
+    .buttons{
+        padding: 15px;
     }
 }
 
-@media screen and (min-width: 600px){
+
+
+@media screen and (max-width: 600px){
+    .logo{
+        margin-left:2%;
+    }
 
     #top-area{
-        height:30%;
+        height:70%;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         flex-wrap: nowrap;
+        justify-content: space-between;
       
     }
     #logo-area{
@@ -70,3 +80,37 @@
     }
 
 }
+@media screen and (max-width: 300px){
+    .logo{
+        margin-left:2%;
+      
+    }
+
+    #top-area{
+        height:65%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+      
+    }
+    #logo-area{
+        height: 100%;
+    
+    }
+    #search-area{
+        width:80%;
+        margin:0px;
+    }
+    #logins{
+        margin-left: 25px;
+        width: 100%;
+        height: 50%; 
+        z-index: 5;
+        
+    }
+
+}
+
+
+    

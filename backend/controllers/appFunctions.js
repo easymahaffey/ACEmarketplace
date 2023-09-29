@@ -7,12 +7,13 @@ module.exports = {
     let {
       itemName,
       itemCategory,
+      itemDescription,
       itemPicture,
       itemSku,
       itemCartQuantity,
       itemWarehouseQuantity,
       itemCost,
-      itemListPrice,
+      itemPrice,
     } = req.body;
     let item = {};
     if (itemName !== "") {
@@ -36,8 +37,11 @@ module.exports = {
     if (itemCost !== "") {
       item.itemCost = itemCost;
     }
-    if (itemListPrice !== "") {
-      item.itemListPrice = itemListPrice;
+    if (itemPrice !== "") {
+      item.itemPrice = itemPrice;
+    }
+    if (itemDescription !== "") {
+      item.itemDescription = itemDescription;
     }
     let newItem = new Item(item);
     Item.findOne({ itemName })
@@ -73,12 +77,13 @@ module.exports = {
       userId,
       itemName,
       itemCategory,
+      itemDescription,
       itemPicture,
       itemSku,
       itemCartQuantity,
       itemWarehouseQuantity,
       itemCost,
-      itemListPrice,
+      itemPrice,
     } = req.body;
     let item = {};
     item.userId = userId;
@@ -103,8 +108,11 @@ module.exports = {
     if (itemCost !== "") {
       item.itemCost = itemCost;
     }
-    if (itemListPrice !== "") {
-      item.itemListPrice = itemListPrice;
+    if (itemPrice !== "") {
+      item.itemPrice = itemPrice;
+    }
+    if (itemDescription !== "") {
+      item.itemDescription = itemDescription;
     }
     let newItem = item;
     newItem
