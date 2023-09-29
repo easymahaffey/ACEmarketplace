@@ -32,6 +32,9 @@ const ItemSchema = mongoose.Schema({
     itemCategory: {
         type: String
     },
+    itemDescription: {
+        type: String
+    },
     itemSku: {
         type: String
     },
