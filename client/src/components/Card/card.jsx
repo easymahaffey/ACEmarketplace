@@ -9,10 +9,10 @@ const Card = ({itemName, itemDescription,itemPrice}) => {
     return(
         <>
 
+
         <div className="flipCard">
         
-        
-        
+    
                     <div className="flip-card-inner">
         
                         <div className="flipCard-Front">

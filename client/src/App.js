@@ -7,6 +7,7 @@ import mockData from './data';
 function App() {
 
   const [itemDisplayList, setItemDisplayList] = useState(mockData)
+  const [category, setCategory] = useState("All")
   console.log(itemDisplayList)
 
   return (
@@ -22,6 +23,8 @@ function App() {
             <Landing
               itemDisplayList={itemDisplayList}
               setItemDisplayList={setItemDisplayList}
+              category={category}
+              setCategory={setCategory}
             />} />
 
 
